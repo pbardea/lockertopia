@@ -11,7 +11,6 @@ session_start();?>
     <meta name="author" content="">
 	<meta name="robots" content="noindex">
 
-    <!-- Le styles -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
@@ -21,12 +20,6 @@ session_start();?>
     </style>
     <link href=".bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -39,14 +32,12 @@ session_start();?>
 
     <div class="container">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1><?php echo $_SESSION['loggedin']?> </h1>
         <p><a href="logout.php">Logout</a></p>
         <p>Account ettings</p>
       </div>
 
-      <!-- Example row of columns -->
       <div class="row">
         <div class="span200">
           <h2>Public Preferences</h2>
@@ -61,11 +52,8 @@ session_start();?>
      <?php include('footer.php'); ?>
 
 
-    </div> <!-- /container -->
+    </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="bootstrap/js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap-transition.js"></script>
     <script src="bootstrap/js/bootstrap-alert.js"></script>

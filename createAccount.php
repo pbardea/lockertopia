@@ -13,7 +13,7 @@ include 'functions.php';
   $emailGood = false;
 
   include "studfunctions.php";
-  
+
   openConnect();
  	$data = mysql_query("SELECT * FROM users") 
  	or die(mysql_error()); 
@@ -34,7 +34,7 @@ include 'functions.php';
 		$data = mysql_query("INSERT INTO users (username, password, salt, first_name, last_name, type, times_logged) VALUES ('$username', '$pword', '$salt', '$first_name', '$last_name', '$type', '$time_logged')") 
 		or die(mysql_error()); 
     closeConnect();
-  
+
  		$_SESSION['loggedin'] = $username;
 		header("Location: index.php");
 		exit;

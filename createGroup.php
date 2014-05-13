@@ -11,7 +11,6 @@ session_start(); ?>
     <meta name="author" content="">
 	<meta name="robots" content="noindex">
 
-    <!-- Le styles -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
@@ -22,36 +21,12 @@ session_start(); ?>
     <link href=".bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="bootstrap/js/bootstrap-dropdown.js"></script>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
-    <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    
-    <!--Script that checks all checkboxes-->
-    <script type="text/javascript">
-    checked=false;
-    function checkedAll (frm1) {
-        var aa= document.getElementById('frm1');
-         if (checked == false)
-              {
-               checked = true
-              }
-            else
-              {
-              checked = false
-              }
-        for (var i =0; i < aa.elements.length; i++) 
-        {
-         aa.elements[i].checked = checked;
-        }
-          }
-    </script>
+
     
   </head>
 
@@ -61,63 +36,59 @@ session_start(); ?>
 
     <div class="container">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="page-header">
         <h1>Create A Group</h1>
         <p>Create your own group</p>
       </div>
 
-      <!-- Example row of columns -->
       <div class="row">
         <div class="span6">
           <h2>Add People</h2>
            <p>Add people to your group</p>
            <?php
-		    echo "<form id='frm1' method='post' action='phpCreateGroup.php'>";
+              echo "<form id='frm1' method='post' action='phpCreateGroup.php'>";
 
-      include "studfunctions.php";
-      openConnect();
-			
-			$data = mysql_query("SELECT * FROM users ORDER BY username") 
-			or die(mysql_error()); 
-			echo "<input type='checkbox' name='checkall' onclick='checkedAll(frm1);'><b> Select Everyone</b><br /><br />";
+            include "studfunctions.php";
+            openConnect();
 
-			while($info = mysql_fetch_array( $data )) { 
-				if ($info['username'] != $_SESSION['loggedin']){
-					echo "<input type='checkbox' name='invitees[]' value='".$info['username']."' /> ".$info['username']."<br />";
-				}
-			} 
-      closeConnect();
-			
-			?>
-            
-            
+            $data = mysql_query("SELECT * FROM users ORDER BY username") 
+            or die(mysql_error()); 
+            echo "<input type='checkbox' name='checkall' onclick='checkedAll(frm1);'><b> Select Everyone</b><br /><br />";
+
+            while($info = mysql_fetch_array( $data )) { 
+              if ($info['username'] != $_SESSION['loggedin']){
+                echo "<input type='checkbox' name='invitees[]' value='".$info['username']."' /> ".$info['username']."<br />";
+              }
+            } 
+            closeConnect();
+
+            ?>
+
         </div>
+
         <div class="span5">
           <?php
            echo "<p>Group Name: <input type='text' name='groupName' placeholder='Group Name' /></p>";
-			echo 'Group Type:&nbsp;&nbsp; <select name="type">
-  						  <option value="class">Class</option>
-						  <option value="club">Club</option>
-						  <option value="sport">Sport Team</option>
-						  <option value="study">Study Group</option>
-				  </select> <br /><br /><br />';
-             echo '<center><input type="submit" name="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></center>';
-			echo "</form>";
-			?>
+           echo 'Group Type:&nbsp;&nbsp; <select name="type">
+                  <option value="class">Class</option>
+                  <option value="club">Club</option>
+                  <option value="sport">Sport Team</option>
+                  <option value="study">Study Group</option>
+              </select> <br /><br /><br />';
+           echo '<center><input type="submit" name="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></center>';
+			     echo "</form>";
+			    ?>
        </div>
+
      </div>
 
-      <hr>
+     <hr>
 
      <?php include('footer.php'); ?>
 
 
-    </div> <!-- /container -->
+    </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <script src="bootstrap/js/jquery.js"></script>
     <script src="bootstrap/js/google-code-prettify/prettify.js"></script>
@@ -134,18 +105,35 @@ session_start(); ?>
     <script src="bootstrap/js/bootstrap-carousel.js"></script>
     <script src="bootstrap/js/bootstrap-typeahead.js"></script>
     <script src="bootstrap/js/application.js"></script>
-     <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
+    <script>
+     var _gauges = _gauges || [];
+     (function() {
+       var t   = document.createElement('script');
+       t.type  = 'text/javascript';
+       t.async = true;
+       t.id    = 'gauges-tracker';
+       t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+       t.src = '//secure.gaug.es/track.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(t, s);
+     })();
+    </script>
+
+
+    <script type="text/javascript">
+    checked=false;
+    function checkedAll (frm1) {
+      var aa= document.getElementById('frm1');
+      if (checked == false){
+        checked = true
+      }
+      else{
+        checked = false
+      }
+      for (var i =0; i < aa.elements.length; i++) {
+        aa.elements[i].checked = checked;
+      }
+    }
     </script>
 
   </body>

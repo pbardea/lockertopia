@@ -15,7 +15,7 @@
               <li><a href="support.php">Support</a></li>
                <?php include('dropdown.php'); ?>
 
-            </ul>       
+            </ul>
               <?php if ($_SESSION['loggedin'] == "@loggedout" or !isset($_SESSION['loggedin'])){
 					echo '<ul class="nav pull-right">
 								<li><p class="navbar-text pull-right">Please <a href="login.php">Login</a></p></li>
@@ -36,8 +36,8 @@
 									</li>
 								</ul>';
 					  }
-		   		?>  
-          </div><!--/.nav-collapse -->
+		   		?>
+          </div>
         </div>
       </div>
     </div>'

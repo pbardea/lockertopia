@@ -20,5 +20,4 @@ closeConnect();
 
 header("Location: groups.php");
 
-		
 ?>
