@@ -56,7 +56,6 @@ session_start(); ?>
 		$allSports = "";
 		$allStudy = "";
           $youArePartOf = "<p>You are part of:</p>";
-    include "studfunctions.php";
     openConnect();
 			$class = mysql_query("SELECT * FROM class WHERE username = '".$_SESSION['loggedin']."'") 
 			or die(mysql_error()); 

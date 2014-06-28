@@ -44,7 +44,6 @@ session_start(); ?>
          <h2>Submit <br />Homework</h2>
           <?php
           echo "<form method='post' action='who.php'>";
-          include "studfunctions.php";
 
           openConnect();
 
@@ -73,7 +72,6 @@ session_start(); ?>
          <h2>Submit<br />Project</h2>
           <?php
           echo "<form method='post' action='who.php'>";
-          include "studfunctions.php";
           openConnect();
           echo "Project:<br /><textarea name='homeworkValue' placeholder='Type Project Here' cols='100' rows='10'></textarea> <br />";
           $class = mysql_query("SELECT * FROM master_group WHERE username = '".$_SESSION['loggedin']."' and status='admin' and group_type = 'class'") 

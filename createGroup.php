@@ -48,7 +48,6 @@ session_start(); ?>
            <?php
               echo "<form id='frm1' method='post' action='phpCreateGroup.php'>";
 
-            include "studfunctions.php";
             openConnect();
 
             $data = mysql_query("SELECT * FROM users ORDER BY username") 

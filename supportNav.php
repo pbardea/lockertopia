@@ -13,6 +13,7 @@
               <li><a href="groups.php">Groups</a></li>
               <li><a href="assigner.php">Assigner</a></li>
               <li class="active"><a href="">Support</a></li>
+              <?php include('studfunctions.php'); ?>
               <?php include('dropdown.php'); ?>
 
             </ul>       

@@ -1,16 +1,17 @@
 <?php
-                        
-                        $allAnoun = "";
+                      
+            $allAnoun = "";
 						$allHW = "";
 						$allProj = "";
 						$anoun = array();
 						$HW = array();
 						$proj = array();
 						
-            include "studfunctions.php";
             openConnect();
 						$groupNameRow = mysql_query("SELECT * FROM master_group WHERE username = '".$_SESSION['loggedin']."';") 
 						or die(mysql_error()); 
+
+
 						while($groupNameArray = mysql_fetch_array( $groupNameRow )) { 
 							$groupName = $groupNameArray['group_name'];
 							$groupType = $groupNameArray['group_type'];
