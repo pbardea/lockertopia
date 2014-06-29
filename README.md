@@ -4,7 +4,9 @@ A site that allows you to manage class and clubs.
 
 Database information is in studfunctions.php
 
-Note: Created March 2012.
+Setup:
+1. Clone
+2. Import lockertopia.sql to import directory structure.
+3. Change credentials in studfunctions.sql
 
-Update: Database structure was lost when moving from computer to computer, but
-is trying to be recovered atm. - June 27
+Note: Created March 2012. I've tried to fix what hasn't been working and it seems to be working currently, but feel free to submit an issue if any bugs are found.
