@@ -16,27 +16,31 @@
                <?php include('dropdown.php'); ?>
 
             </ul>
-              <?php if ($_SESSION['loggedin'] == "@loggedout" or !isset($_SESSION['loggedin'])){
-					echo '<ul class="nav pull-right">
-								<li><p class="navbar-text pull-right">Please <a href="login.php">Login</a></p></li>
-								<li class="divider-vertical"></li>
-								<li><p class="navbar-text pull-right"><a href="submitAccount.php">Sign Up</a></p></li>
-							</ul>';
-					}else{
-						echo '  <ul class="nav pull-right">
-									<li id="fat-menu" class="dropdown">
-									<a href="account.php" class="username" data-toggle="dropdown">'.$_SESSION['loggedin'].'<b class="caret"></b></a></p>
-										<ul class="dropdown-menu">
-											<li><a href="account.php">Account</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="logout.php">Logout</a></li>
-										</ul>
-									</li>
-								</ul>';
-					  }
-		   		?>
+<?php
+if ($_SESSION['loggedin'] == "@loggedout" or !isset($_SESSION['loggedin'])){ //If logged out
+  echo '
+    <ul class="nav pull-right">
+    <li><p class="navbar-text pull-right">Please <a href="login.php">Login</a></p></li>
+    <li class="divider-vertical"></li>
+    <li><p class="navbar-text pull-right"><a href="submitAccount.php">Sign Up</a></p></li>
+    </ul>';
+}else{//If logged in
+  echo '
+    <ul class="nav pull-right">
+      <li id="fat-menu" class="dropdown">
+        <a href="account.php" class="username" data-toggle="dropdown">'.$_SESSION['loggedin'].'<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="account.php">Account</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+    ';
+}
+?>
           </div>
         </div>
       </div>

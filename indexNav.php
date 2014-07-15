@@ -27,7 +27,7 @@
 					}else{
 						echo '  <ul class="nav pull-right">
 									<li id="fat-menu" class="dropdown">
-									<a href="account.php" class="username" data-toggle="dropdown">'.$_SESSION['loggedin'].'<b class="caret"></b></a></p>
+									<a href="account.php" class="username" data-toggle="dropdown">'.$_SESSION['loggedin'].'<b class="caret"></b></a>
 										<ul class="dropdown-menu">
 											<li><a href="account.php">Account</a></li>
 											<li><a href="groupManager.php">Group Manager</a></li>

@@ -1,5 +1,5 @@
     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
+      <div class="navbar-inner"
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
@@ -18,7 +18,7 @@
             </ul>
 			 <ul class="nav pull-right">
 				<li id="fat-menu" class="dropdown">
-				<a href="account.php" class="username" data-toggle="dropdown"><?php echo $_SESSION['loggedin'];?><b class="caret"></b></a></p>
+				<a href="account.php" class="username" data-toggle="dropdown"><?php echo $_SESSION['loggedin'];?><b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="account.php">Account</a></li>
 						<li><a href="#">Another action</a></li>

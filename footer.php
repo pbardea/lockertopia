@@ -17,5 +17,4 @@
         </tr>
         </table>
         
-        </p>
       </footer>
